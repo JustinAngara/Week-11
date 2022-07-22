@@ -60,6 +60,9 @@ function getBoard(){
     return board;
 }
 
+//compares each diagnal, row, and column to see if they're -3 or 3,
+// 'X' is ranked as + and 'O' is ranked as -
+// 3 x's creates a total value of 3 and vis versa for O
 
 function evaluate(board){
     let rowSum = board.map(r => r.reduce((a, b) => a + b));
@@ -96,13 +99,15 @@ function isDrawn(){
     return true;
 }
 
+// this method returns a value of either x or o  
 function getValue(){
     if(isX){
         return 1;
     } 
     return -1;
 }
-// returns turn
+
+// updates html
 function getTurn(){
     let temp = isX;
     if(isX){
